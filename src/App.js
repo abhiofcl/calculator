@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
 import update from "immutability-helper";
-
+import * as math from "mathjs";
+// math = require("/usr/local/lib/node_modules/mathjs");
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,18 @@ class App extends React.Component {
       operations: [],
     };
   }
-  handleClick(e) {
+  calculateOperations = () => {
+    let result = this.state.operations.join("");
+    if (result) {
+      result = math.evaluate(result);
+      result = math.format(result, { precision: 14 });
+      result = String(result);
+      this.setState({
+        operations: [result],
+      });
+    }
+  };
+  handleClick = (e) => {
     const value = e.target.getAttribute("data-value");
     switch (value) {
       case "clear":
@@ -17,7 +29,7 @@ class App extends React.Component {
           operations: [],
         });
         break;
-      case "equals":
+      case "equal":
         this.calculateOperations();
         break;
       default:
@@ -29,7 +41,7 @@ class App extends React.Component {
         });
         break;
     }
-  }
+  };
   render() {
     return (
       <div className="App">
@@ -45,7 +57,7 @@ class App extends React.Component {
           <Button onClick={this.handleClick} value="5" label="5" />
           <Button onClick={this.handleClick} value="2" label="2" />
           <Button onClick={this.handleClick} value="." label="." />
-          <Button onClick={this.handleClick} value="x" label="x" />
+          <Button onClick={this.handleClick} value="*" label="x" />
           <Button onClick={this.handleClick} value="9" label="9" />
           <Button onClick={this.handleClick} value="6" label="6" />
           <Button onClick={this.handleClick} value="3" label="3" />
