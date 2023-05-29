@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
 import update from "immutability-helper";
-
+import * as math from "mathjs";
+// math = require("/usr/local/lib/node_modules/mathjs");
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,18 @@ class App extends React.Component {
       operations: [],
     };
   }
-  handleClick(e) {
+  calculateOperations = () => {
+    let result = this.state.operations.join("");
+    if (result) {
+      result = math.evaluate(result);
+      result = math.format(result, { precision: 14 });
+      result = String(result);
+      this.setState({
+        operations: [result],
+      });
+    }
+  };
+  handleClick = (e) => {
     const value = e.target.getAttribute("data-value");
     switch (value) {
       case "clear":
@@ -17,7 +29,7 @@ class App extends React.Component {
           operations: [],
         });
         break;
-      case "equals":
+      case "equal":
         this.calculateOperations();
         break;
       default:
@@ -29,7 +41,7 @@ class App extends React.Component {
         });
         break;
     }
-  }
+  };
   render() {
     return (
       <div className="App">

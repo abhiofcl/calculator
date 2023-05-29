@@ -13,27 +13,13 @@ body {
 .App {
   height: 400px;
   width: 300px;
-  perspective: 0 200px;
+  /* perspective: 0 200px; */
   background: #EBEBEB;
-  transform: scale(0.8) skew(20deg);
-  transition: transform .5s ease .5s;
+  transform: scale(1.5) skew(0deg);
+  /* transition: transform .5s ease .5s; */
   position: relative;
 }
 
-.App:hover {
-  transform: scale(1.5) skew(0deg);
-  transition: transform .6s;
-}
-
-.App:hover::before {
-  opacity: 0;
-  height: 0;
-}
-
-.App:hover::after {
-  opacity: 0;
-  width: 0;
-}
 
 .App::before {
   position: absolute;
