@@ -57,7 +57,7 @@ class App extends React.Component {
           <Button onClick={this.handleClick} value="5" label="5" />
           <Button onClick={this.handleClick} value="2" label="2" />
           <Button onClick={this.handleClick} value="." label="." />
-          <Button onClick={this.handleClick} value="x" label="x" />
+          <Button onClick={this.handleClick} value="*" label="x" />
           <Button onClick={this.handleClick} value="9" label="9" />
           <Button onClick={this.handleClick} value="6" label="6" />
           <Button onClick={this.handleClick} value="3" label="3" />
