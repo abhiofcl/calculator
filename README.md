@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Simple Calculator App
+
+This is a simple calculator app built using React only with basic functionality
+The evaluations are done using mathjs library
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
