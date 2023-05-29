@@ -2,7 +2,7 @@
 
 This is a simple calculator app built using React only with basic functionality
 The evaluations are done using mathjs library
-
+This app was made possible by following the guide : (https://kris101.medium.com/create-a-simple-calculator-app-in-react-9fd645bb21ac)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
